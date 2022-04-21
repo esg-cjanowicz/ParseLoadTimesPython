@@ -1,9 +1,7 @@
-# This is a sample Python script.
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import os
 import openpyxl
 from openpyxl import Workbook, load_workbook
+import datetime
 
 path = r"C:/Users/Colin Janowicz/Documents/GitHub/ParseLoadTimesPython/Bitbar Using Filter Logs/3fd75eb26459706c-logs/"
 os.chdir(path)
@@ -13,14 +11,13 @@ def create_spreadsheet():
     # grab the active worksheet
     ws = wb.active
     # Data can be assigned directly to cells
-    ws['A1'] = "Process"
+    ws['A1'] = 42
     # Rows can also be appended
     ws.append([1, 2, 3])
     # Python types will automatically be converted
     ws['A2'] = datetime.datetime.now()
     # Save the file
-    wb.save(f"C:/Users/Colin Janowicz/Documents/GitHub/ParseLoadTimesPython/write_sample.xlsx")
-
+    wb.save("C:/Users/Colin Janowicz/Documents/GitHub/ParseLoadTimesPython/sample.xlsx")
 
 def read_files(file_path):
     with open(file_path, 'r') as file:
@@ -28,8 +25,7 @@ def read_files(file_path):
         print(file.name)
 
 
-
-def iterate_over_files():
+def iterate():
     print("File name:")
     for file in os.listdir():
         if file.endswith('.log'):
@@ -44,7 +40,5 @@ def print_hi(name):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    #print_hi('PyCharm')
-    iterate_over_files()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # print_hi('PyCharm')
+    create_spreadsheet()
