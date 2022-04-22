@@ -4,9 +4,11 @@ import pandas as pd
 
 import re
 
-regex = re.compile('([a-zA-Z]*\.[a-zA-Z]*\.[a-zA-Z]*) on (\d*\.\d*)')
+# regex = re.compile('([a-zA-Z]*\.[a-zA-Z]*\.[a-zA-Z]*) on (\d*\.\d*)')
+regex = re.compile('([a-zA-Z]*\.[a-zA-Z]*\.[a-zA-Z]*phase) on (\d*\.\d*)', re.IGNORECASE)
 
-path = r"C:\Users\Colin Janowicz\Documents\GitHub\ParseLoadTimesPython\Bitbar Using Filter Logs\3fd75eb26459706c-logs/"
+# path = r"C:\Users\Colin Janowicz\Documents\GitHub\ParseLoadTimesPython\Bitbar Using Filter Logs\3fd75eb26459706c-logs/"
+path = r"C:\Users\Colin Janowicz\Documents\ipad mini 5/"
 os.chdir(path)
 
 files = os.listdir()
