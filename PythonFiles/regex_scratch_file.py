@@ -11,8 +11,8 @@ def read_files(file_path):
         print(file.name)
         # <color=#FB7345>[LA-STOPWATCH]</color> Ended:
         for line in file:
-            print(line)
             if target_string in line:
+                print(line)
                 print(f"Found {target_string}")
 
 
@@ -23,10 +23,6 @@ def iterate_over_files():
         if file.endswith('.log'):
             file_path = f"{path}/{file}"
             read_files(file_path)
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 
 # Press the green button in the gutter to run the script.
